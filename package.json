@@ -6,7 +6,7 @@
   "types": "lib/index",
   "scripts": {
     "client": "cd client && yarn start",
-    "start": "concurrently --kill-others-on-fail 'yarn server' 'yarn client'",
+    "start": "concurrently --kill-others-on-fail 'yarn client' 'yarn server'",
     "server": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
   },
   "keywords": [],
