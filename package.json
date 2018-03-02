@@ -5,8 +5,9 @@
   "main": "lib/index",
   "types": "lib/index",
   "scripts": {
-    "start": "npm run build:live",
-    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
+    "client": "cd client && yarn start",
+    "start": "concurrently --kill-others-on-fail 'yarn server' 'yarn client'",
+    "server": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "@types/koa": "^2.0.44",
     "@types/koa-router": "^7.0.27",
     "@types/node": "^9.4.6",
+    "concurrently": "^3.5.1",
     "nodemon": "^1.17.1",
     "ts-node": "^5.0.1",
     "tslint": "^5.9.1",
